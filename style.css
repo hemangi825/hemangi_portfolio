@@ -1,0 +1,253 @@
+/* Base Reset & Typography */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Segoe UI', Arial, sans-serif;
+color: #333;
+background-color: #f9f9f9;
+line-height: 1.6;
+transition: background-color 0.3s ease;
+}
+
+/* Navigation */
+nav {
+background-color: #4b6cb7;
+color: white;
+padding: 1em 2em;
+text-align: center;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+position: sticky;
+top: 0;
+z-index: 999;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 1.5em;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+position: relative;
+transition: color 0.3s ease;
+}
+
+nav a::after {
+content: "";
+position: absolute;
+width: 0%;
+height: 2px;
+background: #ffd369;
+left: 0;
+bottom: -4px;
+transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+width: 100%;
+}
+
+/* Hero Section */
+/* .hero {
+text-align: center;
+padding: 4em 1em;
+background: linear-gradient(to right, #4b6cb7, #182848);
+color: white;
+animation: fadeInDown 1s ease;
+} */
+
+
+.hero {
+position: relative;
+padding: 50px;
+text-align: center;
+color: #fff;
+background: linear-gradient(to right, #4b6cb7, #182848);
+
+}
+
+.hero::before {
+content: "HEMANGI HEMANGI HEMANGI HEMANGI HEMANGI ";
+font-size: 60px;
+font-weight: bold;
+color: rgba(255, 255, 255, 0.03);
+position: absolute;
+white-space: nowrap;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) rotate(-30deg);
+z-index: 0;
+}
+
+.hero * {
+position: relative;
+z-index: 1;
+}
+
+.small-text {
+font-size: 0.9rem;
+}
+
+
+.avatar {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+margin-bottom: 1em;
+border: 4px solid #ffd369;
+transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+transform: scale(1.05);
+}
+
+.hero h1 {
+font-size: 2.5em;
+margin-bottom: 0.3em;
+}
+
+.hero p {
+font-size: 1.2em;
+font-weight: 300;
+}
+
+/* Section Styling */
+.section {
+padding: 2.5em 1.5em;
+max-width: 900px;
+margin: 2em auto;
+background: white;
+border-radius: 12px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+animation: fadeIn 1s ease;
+}
+
+h2 {
+border-bottom: 2px solid #4b6cb7;
+padding-bottom: 0.5em;
+margin-bottom: 1em;
+color: #4b6cb7;
+font-size: 1.8em;
+}
+
+/* List and Cards */
+ul {
+padding-left: 1.2em;
+}
+
+.card {
+background: #f0f4ff;
+padding: 1.2em;
+border-left: 4px solid #4b6cb7;
+margin-bottom: 1em;
+border-radius: 8px;
+animation: slideUp 0.5s ease;
+}
+
+/* Skills Section */
+.skills {
+display: flex;
+flex-wrap: wrap;
+gap: 1em;
+list-style: none;
+margin-top: 1em;
+}
+
+.skills li {
+background-color: #4b6cb7;
+color: white;
+padding: 0.6em 1.2em;
+border-radius: 30px;
+font-size: 0.9em;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills li:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Contact Block */
+.section p a {
+color: #4b6cb7;
+text-decoration: none;
+font-weight: bold;
+}
+
+.section blockquote {
+font-style: italic;
+margin-top: 1em;
+border-left: 4px solid #4b6cb7;
+padding-left: 1em;
+color: #555;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 1.5em 1em;
+background: #333;
+color: white;
+font-size: 0.9em;
+}
+#developer-role {
+font-size: 1.5rem;
+color: #fff;
+font-weight: bold;
+white-space: nowrap;
+overflow: hidden;
+border-right: 2px solid;
+animation: blinkCursor 0.7s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+from { border-color: transparent; }
+to { border-color: black; }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+from {
+opacity: 0;
+transform: translateY(-20px);
+} to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+} to {
+opacity: 1;
+}
+}
+
+@keyframes slideUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+} to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+#developer-role::after {
+content: '|';
+animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+50% { opacity: 0; }
+}
